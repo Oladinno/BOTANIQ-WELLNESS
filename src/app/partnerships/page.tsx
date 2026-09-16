@@ -186,9 +186,9 @@ export default function PartnershipsPage() {
         </p>
         <a
           className="button primary"
-          href="mailto:partnerships@botaniqwellness.com"
+          href="mailto:care@botaniqwell.com"
         >
-          partnerships@botaniqwellness.com <span>→</span>
+          care@botaniqwell.com <span>→</span>
         </a>
       </section>
     </>
