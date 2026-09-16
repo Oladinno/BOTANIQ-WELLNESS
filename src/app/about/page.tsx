@@ -1,100 +1,89 @@
-import Image from "next/image";
-import { ArrowRight, FlaskConical, Leaf, Microscope } from "lucide-react";
-import { Button } from "@/components/ui/Button";
-import { IconCard } from "@/components/ui/IconCard";
+export const metadata = { title: "About" };
 
-const features = [
+const values = [
   {
-    icon: Leaf,
-    title: "Botanical Discovery",
-    description:
-      "We explore Africa's rich botanical biodiversity with respect, rigor, and purpose.",
+    n: "01",
+    title: "Respect the source",
+    text: "Engage knowledge holders and botanical resources ethically, with traceability and shared value.",
   },
   {
-    icon: Microscope,
-    title: "Scientific Validation",
-    description:
-      "We apply modern science to validate traditional knowledge and verify potential.",
+    n: "02",
+    title: "Follow the evidence",
+    text: "Ask disciplined questions, validate materials and avoid claims that run ahead of the science.",
   },
   {
-    icon: FlaskConical,
-    title: "Responsible Innovation",
-    description:
-      "We develop solutions that are safe, sustainable, and beneficial for communities and ecosystems.",
+    n: "03",
+    title: "Design for people",
+    text: "Create practical formats, clear communication and solutions relevant to everyday life.",
+  },
+  {
+    n: "04",
+    title: "Build for the world",
+    text: "Develop quality systems and partnerships that can meet local needs and global expectations.",
   },
 ];
-
-export const metadata = {
-  title: "About Us",
-};
 
 export default function AboutPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-forest">
-        <div className="pointer-events-none absolute bottom-0 left-0 h-64 w-64 opacity-[0.07]">
-          <svg viewBox="0 0 200 200" className="h-full w-full text-cream">
-            <path
-              d="M20 180c40-80 60-120 90-160 20 50 40 90 70 140-50 10-100 15-160 20z"
-              fill="currentColor"
-            />
-          </svg>
+      <section className="page-hero" style={{ paddingTop: 140 }}>
+        <div>
+          <p className="section-label">About BOTANIQ</p>
+          <h1>
+            Rooted in Africa.
+            <br />
+            Built for responsible progress.
+          </h1>
+          <p>
+            BOTANIQ WELLNESS™ is a research-led botanical wellness company
+            exploring how African plants, nutrition and traditional knowledge
+            can become safe, credible and useful modern solutions.
+          </p>
         </div>
-
-        <div className="mx-auto grid max-w-7xl lg:grid-cols-2">
-          <div className="hero-diagonal relative z-10 flex flex-col justify-center bg-forest px-6 py-16 sm:px-10 lg:px-14 lg:py-24">
-            <h1 className="animate-fade-up font-serif text-4xl leading-[1.15] text-cream sm:text-5xl lg:text-[3.4rem]">
-              Rooted in <span className="text-gold">Nature.</span>
-              <br />
-              Proven by <span className="text-gold">Science.</span>
-            </h1>
-            <p className="animate-fade-up delay-100 mt-5 max-w-md text-sm tracking-wide text-cream/80 sm:text-base">
-              Science Meets Tradition. Everyday Botanical Wellness.
-            </p>
-            <div className="animate-fade-up delay-200 mt-8">
-              <Button href="/what-we-do" variant="outline">
-                Discover Our Work
-                <ArrowRight className="h-4 w-4" />
-              </Button>
-            </div>
-          </div>
-
-          <div className="relative min-h-[280px] sm:min-h-[360px] lg:min-h-[520px]">
-            <Image
-              src="https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=1400&q=80"
-              alt="Laboratory glassware with botanical specimens"
-              fill
-              priority
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </div>
+        <div className="page-botanical" aria-hidden>
+          <span />
+          <i />
+          <i />
         </div>
       </section>
 
-      <section className="bg-cream px-4 py-16 lg:px-8 lg:py-20">
-        <div className="mx-auto max-w-7xl">
-          <h2 className="animate-fade-up text-center font-serif text-3xl text-forest sm:text-4xl">
-            Where tradition becomes evidence.
-          </h2>
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
-            {features.map((feature, i) => (
-              <div
-                key={feature.title}
-                className={`animate-fade-up ${
-                  i === 0 ? "delay-100" : i === 1 ? "delay-200" : "delay-300"
-                }`}
-              >
-                <IconCard
-                  icon={feature.icon}
-                  title={feature.title}
-                  description={feature.description}
-                  layout="row"
-                />
-              </div>
-            ))}
-          </div>
+      <section className="content-split">
+        <div>
+          <p className="section-label">Why we exist</p>
+          <h2>Africa&apos;s botanical heritage deserves deeper research.</h2>
         </div>
+        <div>
+          <p>
+            Across African communities, plant knowledge—including traditional
+            herbal remedies (Agbo)—has been developed and passed down through
+            generations. That knowledge is valuable, but tradition alone is not
+            proof of safety or effectiveness.
+          </p>
+          <p style={{ marginTop: 28 }}>
+            We bring together ethnobotanical insight, pharmacognosy, nutrition
+            science, analytical testing and formulation to investigate what is
+            promising, what is safe, and what can responsibly become a modern
+            wellness solution.
+          </p>
+        </div>
+      </section>
+
+      <section className="values">
+        {values.map((item) => (
+          <article key={item.n}>
+            <span>{item.n}</span>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </article>
+        ))}
+      </section>
+
+      <section className="statement">
+        <p>Our vision</p>
+        <h2>
+          To help establish Africa as a respected global source of scientifically
+          understood botanical wellness innovation.
+        </h2>
       </section>
     </>
   );

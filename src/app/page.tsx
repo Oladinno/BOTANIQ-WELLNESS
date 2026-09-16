@@ -1,163 +1,305 @@
-import Image from "next/image";
-import { ArrowRight, BarChart3, FlaskConical, Leaf, Microscope, Sprout, Users } from "lucide-react";
-import { Button } from "@/components/ui/Button";
-import { BotanicalHeroArt } from "@/components/graphics/BotanicalHeroArt";
-import { SectionLabel } from "@/components/ui/SectionLabel";
+import Link from "next/link";
 
-const processSteps = [
+const process = [
   {
-    icon: Leaf,
-    title: "Ethnobotanical Insight",
-    description:
-      "We begin with traditional knowledge and place-based botanical heritage.",
+    n: "01",
+    title: "Discover",
+    text: "Identify promising African plants, traditional uses and unmet consumer needs.",
   },
   {
-    icon: Microscope,
-    title: "Scientific Validation",
-    description:
-      "Modern methods test, verify, and deepen what tradition has preserved.",
+    n: "02",
+    title: "Validate",
+    text: "Review evidence, authenticate materials and assess safety, quality and feasibility.",
   },
   {
-    icon: BarChart3,
-    title: "Data & Discovery",
-    description:
-      "Evidence is structured into insights that guide responsible decisions.",
+    n: "03",
+    title: "Formulate",
+    text: "Translate findings into practical, stable and consumer-friendly formats.",
   },
   {
-    icon: Sprout,
-    title: "Sustainable Impact",
-    description:
-      "Outcomes serve communities, ecosystems, and long-term wellness.",
+    n: "04",
+    title: "Deliver",
+    text: "Work with qualified partners on testing, compliance, manufacturing and market access.",
   },
 ];
 
-const pillars = [
+const focusAreas = [
   {
-    icon: Leaf,
-    title: "Botanical Expertise",
-    description:
-      "Deep knowledge of African flora, traditional use, and biodiversity.",
+    n: "01",
+    title: "Metabolic health",
+    text: "Evidence-informed approaches to blood-sugar balance, weight and everyday nutrition.",
   },
   {
-    icon: FlaskConical,
-    title: "Scientific Rigor",
-    description:
-      "Evidence-led methods that turn insight into validated understanding.",
+    n: "02",
+    title: "Gut & microbiome",
+    text: "Exploring plant diversity, fibre, fermentation and digestive wellbeing.",
   },
   {
-    icon: Users,
-    title: "Collaborative by Design",
-    description:
-      "Partnerships with researchers, communities, and wellness innovators.",
+    n: "03",
+    title: "Heart health",
+    text: "Botanical and nutritional concepts designed around long-term cardiovascular wellbeing.",
   },
+  {
+    n: "04",
+    title: "Healthy ageing",
+    text: "Daily support concepts for energy, mobility, resilience and nutritional adequacy.",
+  },
+  {
+    n: "05",
+    title: "Stress & sleep",
+    text: "Responsible formulations inspired by calming botanical traditions and modern research.",
+  },
+  {
+    n: "06",
+    title: "Men's & women's health",
+    text: "Thoughtful, life-stage specific wellness concepts grounded in safety and relevance.",
+  },
+];
+
+const formats = [
+  "Functional foods",
+  "Botanical gummies",
+  "Oral wellness",
+  "Powders & sachets",
+  "Oils & extracts",
+  "Ready-to-drink shots",
 ];
 
 export default function HomePage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(184,156,106,0.12),transparent_50%),radial-gradient(ellipse_at_bottom_left,rgba(13,44,36,0.06),transparent_45%)]" />
-        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-14 lg:grid-cols-2 lg:gap-8 lg:px-8 lg:py-20">
-          <div className="animate-fade-up">
-            <h1 className="font-serif text-4xl leading-[1.1] text-forest sm:text-5xl lg:text-6xl">
-              Science Meets Tradition.
-            </h1>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
-              BOTANIQ WELLNESS™ unites African botanical heritage with rigorous
-              science to advance everyday wellness that is safe, relevant, and
-              sustainable.
-            </p>
-            <div className="mt-8">
-              <Button href="/partner">
-                Let&apos;s Collaborate
-                <ArrowRight className="h-4 w-4 text-gold" />
-              </Button>
+      <section className="hero" id="top">
+        <div className="hero-copy">
+          <p className="eyebrow">
+            <span /> Africa&apos;s botanical wellness company
+          </p>
+          <h1>
+            Science meets
+            <br />
+            <em>tradition.</em>
+          </h1>
+          <p className="hero-lead">
+            We research African botanicals and traditional herbal knowledge
+            (Agbo), then translate promising insights into responsible, modern
+            wellness solutions.
+          </p>
+          <div className="hero-actions">
+            <Link className="button primary" href="#science">
+              Explore our approach <span>→</span>
+            </Link>
+            <Link className="text-link" href="#partnerships">
+              Partner with us <span>→</span>
+            </Link>
+          </div>
+          <div className="proof-row">
+            <div>
+              <strong>Research-led</strong>
+              <span>Built around evidence</span>
+            </div>
+            <div>
+              <strong>Africa-rooted</strong>
+              <span>Plants, people &amp; knowledge</span>
+            </div>
+            <div>
+              <strong>Globally minded</strong>
+              <span>Quality designed to travel</span>
             </div>
           </div>
-          <div className="animate-fade-in delay-200 relative mx-auto aspect-square w-full max-w-lg lg:max-w-none">
-            <BotanicalHeroArt className="h-full w-full" />
+        </div>
+        <div className="hero-art" aria-label="Abstract botanical composition">
+          <div className="sun" />
+          <div className="halo" />
+          <div className="stem stem-one">
+            <i />
+            <i />
+            <i />
+            <i />
           </div>
+          <div className="stem stem-two">
+            <i />
+            <i />
+            <i />
+          </div>
+          <div className="specimen-card">
+            <span>BOTANICAL SPECIMEN</span>
+            <b>01</b>
+            <small>Origin · Identity · Evidence</small>
+          </div>
+          <p>
+            Nature holds possibilities.
+            <br />
+            Science helps us understand them.
+          </p>
         </div>
       </section>
 
-      {/* Research Process */}
-      <section className="border-t border-forest/10 bg-cream px-4 py-16 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-10 flex items-center justify-center gap-4">
-            <span className="h-px w-12 bg-gold/70 sm:w-20" />
-            <SectionLabel>Our Research Process</SectionLabel>
-            <span className="h-px w-12 bg-gold/70 sm:w-20" />
-          </div>
-
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {processSteps.map((step, index) => (
-              <div key={step.title} className="relative">
-                <article className="h-full rounded-lg border border-forest/10 bg-cream-deep/40 p-5">
-                  <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-full border border-gold text-gold">
-                    <step.icon className="h-5 w-5" strokeWidth={1.5} />
-                  </div>
-                  <h3 className="text-sm font-semibold text-forest">{step.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted">
-                    {step.description}
-                  </p>
-                </article>
-                {index < processSteps.length - 1 && (
-                  <span
-                    className="absolute -right-3 top-1/2 z-10 hidden -translate-y-1/2 text-gold lg:block"
-                    aria-hidden
-                  >
-                    →
-                  </span>
-                )}
-              </div>
-            ))}
-          </div>
+      <section className="manifesto" id="about">
+        <p className="section-label">Our purpose</p>
+        <div>
+          <h2>
+            A new standard for
+            <br />
+            African botanical wellness.
+          </h2>
+          <p>
+            Traditional knowledge has guided wellbeing for generations. BOTANIQ
+            WELLNESS™ exists to study that knowledge responsibly—combining
+            ethnobotany, nutrition, pharmacognosy and product science to create
+            solutions people can understand, trust and use.
+          </p>
+          <p>
+            We are building a bridge between cultural wisdom and the disciplines
+            required for safe, consistent, modern wellness products.
+          </p>
         </div>
       </section>
 
-      {/* Rooted banner */}
-      <section className="bg-forest px-4 py-16 text-cream lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.1fr_1.4fr] lg:items-start">
-          <div className="animate-fade-up">
-            <h2 className="font-serif text-3xl leading-tight text-gold sm:text-4xl">
-              ROOTED IN AFRICA.
+      <section className="science" id="science">
+        <div className="section-head">
+          <div>
+            <p className="section-label light">Our research model</p>
+            <h2>
+              From plant knowledge
               <br />
-              FOCUSED ON THE FUTURE.
+              to practical wellbeing.
             </h2>
-            <p className="mt-5 max-w-md text-sm leading-relaxed text-cream/80">
-              We bridge ancestral botanical knowledge with contemporary science
-              to build wellness solutions that honor place, people, and evidence.
+          </div>
+          <p>
+            Our work begins with questions—not claims. Each concept moves
+            through a structured pathway designed to strengthen evidence,
+            safety, quality and real-world relevance.
+          </p>
+        </div>
+        <div className="process-grid">
+          {process.map((step) => (
+            <article key={step.n}>
+              <span>{step.n}</span>
+              <h3>{step.title}</h3>
+              <p>{step.text}</p>
+            </article>
+          ))}
+        </div>
+        <div className="institute">
+          <div className="seal">
+            <span>BOTANIQ</span>
+            <b>INSTITUTE</b>
+            <small>R · S · Q</small>
+          </div>
+          <div>
+            <p className="section-label light">The research engine</p>
+            <h3>BOTANIQ™ Institute of Botanical &amp; Nutritional Sciences</h3>
+            <p>
+              Our planned research platform brings together plant science,
+              nutrition, formulation, analytical testing and responsible
+              commercialization.
             </p>
           </div>
-          <div className="grid gap-8 sm:grid-cols-3">
-            {pillars.map((pillar) => (
-              <div key={pillar.title}>
-                <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-full border border-gold/60 text-gold">
-                  <pillar.icon className="h-5 w-5" strokeWidth={1.5} />
-                </div>
-                <h3 className="text-xs font-semibold uppercase tracking-[0.14em] text-gold">
-                  {pillar.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-cream/75">
-                  {pillar.description}
-                </p>
-              </div>
-            ))}
-          </div>
+          <Link href="#contact">
+            Explore research partnerships <span>→</span>
+          </Link>
         </div>
       </section>
 
-      {/* subtle image strip for atmosphere */}
-      <section className="relative h-40 overflow-hidden sm:h-52">
-        <Image
-          src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1600&q=80"
-          alt="Botanical research materials"
-          fill
-          className="object-cover opacity-90"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-forest/30" />
+      <section className="focus" id="focus">
+        <div className="section-head dark">
+          <div>
+            <p className="section-label">Where we focus</p>
+            <h2>
+              Everyday needs.
+              <br />
+              Deeper thinking.
+            </h2>
+          </div>
+          <p>
+            We concentrate on high-impact wellness areas where African botanical
+            resources and nutritional science may offer meaningful, responsible
+            innovation.
+          </p>
+        </div>
+        <div className="focus-grid">
+          {focusAreas.map((area) => (
+            <article key={area.title}>
+              <span>{area.n}</span>
+              <div className="mini-leaf" />
+              <h3>{area.title}</h3>
+              <p>{area.text}</p>
+              <Link href="#contact" aria-label={`Discuss ${area.title}`}>
+                Learn more →
+              </Link>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="formats">
+        <p className="section-label">Designed for real life</p>
+        <div className="formats-title">
+          <h2>
+            Wellness people
+            <br />
+            can actually use.
+          </h2>
+          <p>
+            Research only creates impact when it becomes accessible. We explore
+            familiar, convenient formats that can fit naturally into everyday
+            routines.
+          </p>
+        </div>
+        <div className="format-list">
+          {formats.map((item) => (
+            <span key={item}>{item}</span>
+          ))}
+        </div>
+        <p className="note">
+          Product concepts remain subject to scientific validation, safety
+          assessment, regulatory review and manufacturing feasibility.
+        </p>
+      </section>
+
+      <section className="partnerships" id="partnerships">
+        <div className="partner-art">
+          <div className="rings" />
+          <div className="leaf-outline" />
+        </div>
+        <div>
+          <p className="section-label light">Build with us</p>
+          <h2>
+            Meaningful innovation
+            <br />
+            takes the right partners.
+          </h2>
+          <p>
+            We welcome conversations with researchers, universities,
+            laboratories, formulation specialists, qualified manufacturers,
+            healthcare experts and market partners who share our commitment to
+            responsible botanical innovation.
+          </p>
+          <ul>
+            <li>Research &amp; scientific collaboration</li>
+            <li>Ingredient sourcing &amp; traceability</li>
+            <li>Testing, formulation &amp; manufacturing</li>
+            <li>Distribution &amp; market development</li>
+          </ul>
+          <Link className="button cream" href="#contact">
+            Discuss a partnership <span>→</span>
+          </Link>
+        </div>
+      </section>
+
+      <section className="contact" id="contact">
+        <p className="section-label">Start a conversation</p>
+        <h2>
+          Let&apos;s turn botanical potential
+          <br />
+          into responsible progress.
+        </h2>
+        <p>Tell us about your research, capability or partnership idea.</p>
+        <a
+          className="button primary"
+          href="mailto:partnerships@botaniqwellness.com"
+        >
+          partnerships@botaniqwellness.com <span>→</span>
+        </a>
       </section>
     </>
   );
