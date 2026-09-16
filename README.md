@@ -1,6 +1,6 @@
 # BOTANIQ WELLNESS™
 
-Clone of [botaniq-wellness.abbeyhanson.chatgpt.site](https://botaniq-wellness.abbeyhanson.chatgpt.site/) — a research-led African botanical wellness marketing site.
+Africa's botanical wellness, research and product-development company site.
 
 ## Run locally
 
@@ -16,10 +16,12 @@ Open [http://localhost:3000](http://localhost:3000).
 | Path | Page |
 |------|------|
 | `/` | Home |
-| `/about` | About |
-| `/science` | Our science |
-| `/focus-areas` | Focus areas |
-| `/partnerships` | Partnerships |
+| `/about` | About BOTANIQ |
+| `/what-we-do` | What We Do |
+| `/science` | Our Research |
+| `/community-health` | Community Health Intelligence |
+| `/focus-areas` | Wellness Focus Areas |
+| `/partnerships` | Partner With Us |
 | `/researchhub` | ResearchHub |
 
 ## Stack

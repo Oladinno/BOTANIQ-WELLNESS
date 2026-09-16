@@ -19,7 +19,9 @@ export function Footer() {
       </p>
       <div>
         <Link href="/about">About</Link>
+        <Link href="/what-we-do">What We Do</Link>
         <Link href="/science">Research</Link>
+        <Link href="/community-health">Community Health</Link>
         <Link href="/focus-areas">Focus Areas</Link>
         <Link href="/partnerships">Partnerships</Link>
         <Link href="/researchhub">ResearchHub</Link>

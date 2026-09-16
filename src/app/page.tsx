@@ -84,10 +84,10 @@ export default function HomePage() {
             wellness solutions.
           </p>
           <div className="hero-actions">
-            <Link className="button primary" href="#science">
+            <Link className="button primary" href="/what-we-do">
               Explore our approach <span>→</span>
             </Link>
-            <Link className="text-link" href="#partnerships">
+            <Link className="text-link" href="/partnerships">
               Partner with us <span>→</span>
             </Link>
           </div>
